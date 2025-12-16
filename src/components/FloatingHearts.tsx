@@ -52,15 +52,16 @@ const FloatingHearts = () => {
       {hearts.map((heart) => (
         <span
           key={heart.id}
-          className="floating-heart text-primary"
+          className="floating-heart"
           style={{
             left: `${heart.left}%`,
             fontSize: `${heart.size}px`,
             animationDuration: `${heart.duration}s`,
             animationDelay: `${heart.delay}s`,
+            filter: 'drop-shadow(0 0 8px hsl(330 70% 60% / 0.6))',
           }}
         >
-          💕
+          💗
         </span>
       ))}
     </div>
