@@ -118,17 +118,17 @@
     background: var(--gradient-button);
   }
 
-  /* Shooting star animation */
+  /* Shooting star animation - MƯA SAO BĂNG */
   @keyframes shooting-star {
     0% {
-      transform: translateX(0) translateY(0) rotate(-45deg);
+      transform: translateX(0) translateY(0);
       opacity: 1;
     }
-    70% {
+    60% {
       opacity: 1;
     }
     100% {
-      transform: translateX(500px) translateY(500px) rotate(-45deg);
+      transform: translateX(600px) translateY(600px);
       opacity: 0;
     }
   }
