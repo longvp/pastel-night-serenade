@@ -7,9 +7,7 @@ const MusicControl = () => {
 
   useEffect(() => {
     // Tạo audio element với nhạc nền nhẹ nhàng
-    audioRef.current = new Audio(
-      "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3"
-    );
+    audioRef.current = new Audio("/Chuc-Be-Ngu-Ngon-Luu-Ha-An.mp3");
     audioRef.current.loop = true;
     audioRef.current.volume = 0.3;
 

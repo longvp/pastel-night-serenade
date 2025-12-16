@@ -13,16 +13,14 @@ const Index = () => {
     <div className="night-sky min-h-screen overflow-hidden relative">
       {/* Background effects - Night sky with stars */}
       <NightSky />
+      <NightSky />
 
       {/* Shooting stars - Sao băng */}
+      <ShootingStars />
       <ShootingStars />
 
       {/* Floating hearts */}
       <FloatingHearts />
-
-      {/* Music control */}
-      <MusicControl />
-
       {/* Main content */}
       <main className="relative z-20 min-h-screen flex flex-col items-center justify-center px-6 py-12">
         {/* Moon decoration - Mặt trăng sáng */}
@@ -57,6 +55,8 @@ const Index = () => {
                 onComplete={() => setShowSecondLine(true)}
               />
             </h1>
+            {/* Music control */}
+            <MusicControl />
           </div>
 
           {/* Decorative bottom - Stars and hearts */}
@@ -76,7 +76,7 @@ const Index = () => {
         {/* Footer decoration */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
           <p className="font-body text-sm text-muted-foreground opacity-70">
-            ✨ Với tất cả yêu thương 💕 ✨
+            ✨ 💕 ✨
           </p>
         </div>
       </main>
