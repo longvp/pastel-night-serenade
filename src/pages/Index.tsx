@@ -1,6 +1,7 @@
 import { useState } from "react";
 import FloatingHearts from "@/components/FloatingHearts";
-import TwinklingStars from "@/components/TwinklingStars";
+import NightSky from "@/components/NightSky";
+import ShootingStars from "@/components/ShootingStars";
 import TypewriterText from "@/components/TypewriterText";
 import MusicControl from "@/components/MusicControl";
 import ConfessionButton from "@/components/ConfessionButton";
@@ -10,9 +11,14 @@ const Index = () => {
   const [showButton, setShowButton] = useState(false);
 
   return (
-    <div className="gradient-bg min-h-screen overflow-hidden relative">
-      {/* Background effects */}
-      <TwinklingStars />
+    <div className="night-sky min-h-screen overflow-hidden relative">
+      {/* Background effects - Night sky with stars */}
+      <NightSky />
+      
+      {/* Shooting stars - Sao băng */}
+      <ShootingStars />
+      
+      {/* Floating hearts */}
       <FloatingHearts />
 
       {/* Music control */}
@@ -20,23 +26,27 @@ const Index = () => {
 
       {/* Main content */}
       <main className="relative z-20 min-h-screen flex flex-col items-center justify-center px-6 py-12">
-        {/* Moon decoration */}
-        <div className="absolute top-8 left-8 md:top-16 md:left-16 text-6xl md:text-8xl moon-glow">
-          🌙
+        {/* Moon decoration - Mặt trăng sáng */}
+        <div className="absolute top-8 right-8 md:top-12 md:right-16">
+          <div className="relative">
+            <span className="text-6xl md:text-8xl moon-glow block">🌙</span>
+            {/* Moon glow effect */}
+            <div className="absolute inset-0 bg-yellow-200/20 rounded-full blur-3xl scale-150" />
+          </div>
         </div>
 
         {/* Main message card */}
         <div className="max-w-2xl w-full text-center">
-          {/* Decorative top */}
+          {/* Decorative top - Sao sáng */}
           <div className="flex justify-center gap-4 mb-6 text-3xl md:text-4xl">
-            <span className="sparkle">💫</span>
+            <span className="sparkle">✨</span>
             <span className="sparkle" style={{ animationDelay: "0.3s" }}>⭐</span>
-            <span className="sparkle" style={{ animationDelay: "0.6s" }}>💫</span>
+            <span className="sparkle" style={{ animationDelay: "0.6s" }}>✨</span>
           </div>
 
-          {/* Main greeting */}
-          <div className="bg-card/60 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl border border-border/50">
-            <h1 className="font-romantic text-4xl md:text-5xl lg:text-6xl text-primary mb-8 leading-relaxed">
+          {/* Main greeting - Card trong suốt */}
+          <div className="bg-card/40 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl border border-purple-soft/20">
+            <h1 className="font-romantic text-4xl md:text-5xl lg:text-6xl text-primary mb-8 leading-relaxed drop-shadow-lg">
               <TypewriterText
                 text="Chúc em ngủ ngon 🌙"
                 speed={100}
@@ -46,7 +56,7 @@ const Index = () => {
             </h1>
 
             {showSecondLine && (
-              <p className="font-romantic text-2xl md:text-3xl lg:text-4xl text-accent leading-relaxed animate-fade-in-up">
+              <p className="font-romantic text-2xl md:text-3xl lg:text-4xl text-accent leading-relaxed animate-fade-in-up drop-shadow-lg">
                 <TypewriterText
                   text="Mong rằng giấc mơ tối nay sẽ có anh trong đó 💕"
                   speed={80}
@@ -57,12 +67,12 @@ const Index = () => {
             )}
           </div>
 
-          {/* Decorative bottom */}
+          {/* Decorative bottom - Stars and hearts */}
           <div className="flex justify-center gap-4 mt-6 text-2xl">
-            {["🌸", "💖", "🌸", "💖", "🌸"].map((emoji, i) => (
+            {["⭐", "💖", "✨", "💖", "⭐"].map((emoji, i) => (
               <span
                 key={i}
-                className="animate-fade-in-up"
+                className="animate-fade-in-up drop-shadow-lg"
                 style={{ animationDelay: `${2 + i * 0.15}s` }}
               >
                 {emoji}
@@ -76,8 +86,8 @@ const Index = () => {
 
         {/* Footer decoration */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
-          <p className="font-body text-sm text-muted-foreground opacity-60">
-            Với tất cả yêu thương 💕
+          <p className="font-body text-sm text-muted-foreground opacity-70">
+            ✨ Với tất cả yêu thương 💕 ✨
           </p>
         </div>
       </main>

@@ -6,48 +6,54 @@
 
 @layer base {
   :root {
-    --background: 330 50% 95%;
-    --foreground: 330 60% 20%;
+    /* Night sky theme */
+    --background: 240 30% 8%;
+    --foreground: 280 50% 95%;
 
-    --card: 330 40% 98%;
-    --card-foreground: 330 60% 20%;
+    --card: 250 30% 12%;
+    --card-foreground: 280 50% 95%;
 
-    --popover: 330 40% 98%;
-    --popover-foreground: 330 60% 20%;
+    --popover: 250 30% 12%;
+    --popover-foreground: 280 50% 95%;
 
-    --primary: 330 70% 60%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 330 70% 70%;
+    --primary-foreground: 240 30% 8%;
 
-    --secondary: 280 40% 85%;
-    --secondary-foreground: 280 60% 25%;
+    --secondary: 280 50% 30%;
+    --secondary-foreground: 280 50% 95%;
 
-    --muted: 330 30% 90%;
-    --muted-foreground: 330 30% 45%;
+    --muted: 250 25% 18%;
+    --muted-foreground: 280 30% 70%;
 
-    --accent: 280 50% 75%;
-    --accent-foreground: 280 60% 20%;
+    --accent: 280 60% 70%;
+    --accent-foreground: 240 30% 8%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 330 30% 85%;
-    --input: 330 30% 85%;
+    --border: 250 30% 25%;
+    --input: 250 30% 20%;
     --ring: 330 70% 60%;
 
     --radius: 1rem;
 
-    /* Custom romantic colors */
-    --pink-soft: 330 70% 85%;
-    --pink-medium: 330 70% 70%;
+    /* Custom romantic night colors */
+    --pink-soft: 330 70% 80%;
+    --pink-medium: 330 70% 65%;
     --pink-deep: 330 70% 55%;
-    --purple-soft: 280 50% 85%;
-    --purple-medium: 280 50% 70%;
-    --gold-star: 45 90% 70%;
+    --purple-soft: 280 60% 75%;
+    --purple-medium: 280 50% 60%;
+    --gold-star: 45 100% 75%;
+    --night-dark: 240 40% 5%;
+    --night-medium: 250 35% 12%;
+    --night-light: 260 30% 20%;
     
     /* Gradients */
-    --gradient-romantic: linear-gradient(135deg, hsl(330 70% 90%) 0%, hsl(280 50% 88%) 50%, hsl(330 60% 85%) 100%);
+    --gradient-night: linear-gradient(180deg, hsl(240 40% 5%) 0%, hsl(260 35% 15%) 50%, hsl(280 30% 20%) 100%);
+    --gradient-romantic: linear-gradient(135deg, hsl(250 30% 12% / 0.9) 0%, hsl(280 30% 15% / 0.9) 100%);
     --gradient-heart: linear-gradient(135deg, hsl(350 80% 65%) 0%, hsl(330 70% 60%) 100%);
-    --gradient-button: linear-gradient(135deg, hsl(330 70% 65%) 0%, hsl(280 60% 65%) 100%);
+    --gradient-button: linear-gradient(135deg, hsl(330 70% 60%) 0%, hsl(280 60% 55%) 100%);
+    --gradient-shooting-star: linear-gradient(90deg, hsl(0 0% 100%) 0%, hsl(45 100% 80%) 50%, transparent 100%);
   }
 
   .dark {
@@ -101,13 +107,59 @@
     font-family: 'Quicksand', sans-serif;
   }
 
-  .gradient-bg {
-    background: var(--gradient-romantic);
+  .night-sky {
+    background: var(--gradient-night);
     min-height: 100vh;
+    position: relative;
+    overflow: hidden;
   }
 
   .gradient-button {
     background: var(--gradient-button);
+  }
+
+  /* Shooting star animation */
+  @keyframes shooting-star {
+    0% {
+      transform: translateX(0) translateY(0) rotate(-45deg);
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(500px) translateY(500px) rotate(-45deg);
+      opacity: 0;
+    }
+  }
+
+  .shooting-star {
+    position: fixed;
+    width: 150px;
+    height: 2px;
+    background: var(--gradient-shooting-star);
+    border-radius: 50%;
+    animation: shooting-star linear forwards;
+    pointer-events: none;
+    z-index: 5;
+    box-shadow: 
+      0 0 10px 2px hsl(0 0% 100% / 0.5),
+      0 0 20px 4px hsl(45 100% 80% / 0.3);
+  }
+
+  .shooting-star::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: hsl(0 0% 100%);
+    border-radius: 50%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    box-shadow: 
+      0 0 15px 5px hsl(0 0% 100% / 0.8),
+      0 0 30px 10px hsl(45 100% 80% / 0.5);
   }
 
   .text-gradient {
