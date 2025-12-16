@@ -4,7 +4,6 @@ import NightSky from "@/components/NightSky";
 import ShootingStars from "@/components/ShootingStars";
 import TypewriterText from "@/components/TypewriterText";
 import MusicControl from "@/components/MusicControl";
-import ConfessionButton from "@/components/ConfessionButton";
 
 const Index = () => {
   const [showSecondLine, setShowSecondLine] = useState(false);
@@ -14,10 +13,10 @@ const Index = () => {
     <div className="night-sky min-h-screen overflow-hidden relative">
       {/* Background effects - Night sky with stars */}
       <NightSky />
-      
+
       {/* Shooting stars - Sao băng */}
       <ShootingStars />
-      
+
       {/* Floating hearts */}
       <FloatingHearts />
 
@@ -40,8 +39,12 @@ const Index = () => {
           {/* Decorative top - Sao sáng */}
           <div className="flex justify-center gap-4 mb-6 text-3xl md:text-4xl">
             <span className="sparkle">✨</span>
-            <span className="sparkle" style={{ animationDelay: "0.3s" }}>⭐</span>
-            <span className="sparkle" style={{ animationDelay: "0.6s" }}>✨</span>
+            <span className="sparkle" style={{ animationDelay: "0.3s" }}>
+              ⭐
+            </span>
+            <span className="sparkle" style={{ animationDelay: "0.6s" }}>
+              ✨
+            </span>
           </div>
 
           {/* Main greeting - Card trong suốt */}
@@ -54,17 +57,6 @@ const Index = () => {
                 onComplete={() => setShowSecondLine(true)}
               />
             </h1>
-
-            {showSecondLine && (
-              <p className="font-romantic text-2xl md:text-3xl lg:text-4xl text-accent leading-relaxed animate-fade-in-up drop-shadow-lg">
-                <TypewriterText
-                  text="Mong rằng giấc mơ tối nay sẽ có anh trong đó 💕"
-                  speed={80}
-                  delay={300}
-                  onComplete={() => setShowButton(true)}
-                />
-              </p>
-            )}
           </div>
 
           {/* Decorative bottom - Stars and hearts */}
@@ -79,9 +71,6 @@ const Index = () => {
               </span>
             ))}
           </div>
-
-          {/* Confession button */}
-          {showButton && <ConfessionButton />}
         </div>
 
         {/* Footer decoration */}
