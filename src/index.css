@@ -118,33 +118,33 @@
     background: var(--gradient-button);
   }
 
-  /* Shooting star animation - MƯA SAO BĂNG */
+  /* Shooting star animation - MƯA SAO BĂNG RƠI THẲNG ĐỨNG */
   @keyframes shooting-star {
     0% {
-      transform: translateX(0) translateY(0);
+      transform: translateY(0);
       opacity: 1;
     }
-    60% {
+    70% {
       opacity: 1;
     }
     100% {
-      transform: translateX(600px) translateY(600px);
+      transform: translateY(100vh);
       opacity: 0;
     }
   }
 
   .shooting-star {
     position: fixed;
-    width: 150px;
-    height: 2px;
-    background: var(--gradient-shooting-star);
+    width: 3px;
+    height: 120px;
+    background: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(45 100% 80%) 30%, transparent 100%);
     border-radius: 50%;
     animation: shooting-star linear forwards;
     pointer-events: none;
     z-index: 5;
     box-shadow: 
-      0 0 10px 2px hsl(0 0% 100% / 0.5),
-      0 0 20px 4px hsl(45 100% 80% / 0.3);
+      0 0 10px 3px hsl(0 0% 100% / 0.6),
+      0 0 20px 5px hsl(45 100% 80% / 0.4);
   }
 
   .shooting-star::before {
@@ -154,12 +154,12 @@
     height: 8px;
     background: hsl(0 0% 100%);
     border-radius: 50%;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     box-shadow: 
-      0 0 15px 5px hsl(0 0% 100% / 0.8),
-      0 0 30px 10px hsl(45 100% 80% / 0.5);
+      0 0 15px 5px hsl(0 0% 100% / 0.9),
+      0 0 30px 10px hsl(45 100% 80% / 0.6);
   }
 
   .text-gradient {
